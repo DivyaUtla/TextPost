@@ -1,0 +1,1 @@
+![ER Diagram](https://github.com/DivyaUtla/Movieapp/blob/master/ER.jpg)
