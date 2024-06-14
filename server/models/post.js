@@ -11,7 +11,7 @@ const postSchema=new mongoose.Schema({
 })
 
 //3.create mongoose model
-const Post=mongoose.model("Post",userSchema);
+const Post=mongoose.model("Post",postSchema);
 
 //4.Create CRUD functions on model
 

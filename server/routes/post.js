@@ -1,6 +1,6 @@
 //1. Import needed libraries
 const express=require("express");
-const User=require('../models/user');//Accesses funxtions in user model file
+const Post=require('../models/post');//Accesses funxtions in user model file
 const router=express.Router();
 
 router
