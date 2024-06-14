@@ -6,6 +6,7 @@ const path = require('path');
 
 const userRoutes=require('./server/routes/user');
 const postRoutes=require('./server/routes/post');
+const commentRoutes=require('./server/routes/comment');
 
 mongoose.connect(process.env.dbURL)
     .then(console.log("DB Connected!"))
@@ -22,6 +23,7 @@ app.use(function(req, res, next) {
 
 app.use('/user',userRoutes);
 app.use('/post',postRoutes);
+app.use('/comment',commentRoutes);
 
 app.use(express.static(path.join(__dirname, "/public")));
 app.get('/',(req, res) => res.sendFile(path.join(__dirname,'/public','index.html')));

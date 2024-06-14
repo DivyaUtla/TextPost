@@ -4,10 +4,11 @@ const mongoose=require("mongoose");
 //2.create Schema for entity
 const postSchema=new mongoose.Schema({
     userId: {
+        type: mongoose.Schema.Types.ObjectId,
         ref:"User"
     },
-    contentofpost:{type:String, unique:true},
-    commentsforpost:{type:String}
+    contentofpost:{type:String, unique:true}
+    //commentsforpost:{type:String}
 })
 
 //3.create mongoose model
