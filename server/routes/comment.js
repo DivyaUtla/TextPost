@@ -24,7 +24,7 @@ router
 
     .put('/updateComment',async (req,res)=>{
         try{
-            const comment=await Post.updatePost(req.body.id,req.body.commentsforpost);
+            const comment=await Comment.updateComment(req.body.id,req.body.commentsforpost);
             res.send(comment);
         }catch(error){
             res.status(401).send({message:error.message});
