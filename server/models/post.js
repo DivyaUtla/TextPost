@@ -8,7 +8,6 @@ const postSchema=new mongoose.Schema({
         ref:"User"
     },
     contentofpost:{type:String, unique:true}
-    //commentsforpost:{type:String}
 })
 
 //3.create mongoose model
@@ -16,7 +15,7 @@ const Post=mongoose.model("Post",postSchema);
 
 //4.Create CRUD functions on model
 
-//CREATE a User
+//CREATE a Post
 async function createPost(id,contentofpost){
     const newPost=await Post.create({
         userId:id,
@@ -25,16 +24,18 @@ async function createPost(id,contentofpost){
 return newPost;    
 }
 
+//UPDATE post
 async function updatePost(id,contentofpost){
     const post=await Post.updateOne({"_id":id},{$set:{contentofpost:contentofpost}});
     return post;
 }
 
-//DELETE an User
+//DELETE post
 async function deletePost(id){
     await Post.deleteOne({"_id":id});
 }
 
+//READ post
 async function getPost(id){
     return await Post.findOne({"_id":id});
 }
