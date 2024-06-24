@@ -9,7 +9,7 @@ function RegisterForm(){
             <tbody>
             <tr>
                 <td>
-                  <label htmlFor="firstname">Firstname</label>
+                  <b><label htmlFor="firstname" style={{color:'white'}}>Firstname</label></b>
                 </td>
                 <td>
                   <input 
@@ -24,7 +24,7 @@ function RegisterForm(){
 
               <tr>
                 <td>
-                  <label htmlFor="lastname">Lastname</label>
+                <b> <label htmlFor="lastname" style={{color:'white'}}>Lastname</label></b>
                 </td>
                 <td>
                   <input 
@@ -39,7 +39,7 @@ function RegisterForm(){
 
              <tr>
                  <td>
-                     <label htmlFor='username'>UserName</label>
+                 <b> <label htmlFor='username' style={{color:'white'}}>UserName</label></b>
                  </td>
                  <td>
                      <input
@@ -54,7 +54,7 @@ function RegisterForm(){
 
              <tr>
                 <td>
-                  <label htmlFor="email">Email</label>
+                <b> <label htmlFor="email" style={{color:'white'}}>Email</label></b>
                 </td>
                 <td>
                   <input
@@ -70,7 +70,7 @@ function RegisterForm(){
 
               <tr>
                 <td>
-                  <label htmlFor="password">Password</label>
+                <b><label htmlFor="password" style={{color:'white'}}>Password</label></b>
                 </td>
                 <td>
                   <input
@@ -86,7 +86,7 @@ function RegisterForm(){
 
               <tr>
                 <td>
-                  <label htmlFor="password2">Confirm Password</label>
+                <b><label htmlFor="password2" style={{color:'white'}}>Confirm Password</label></b>
                 </td>
                 <td>
                   <input
@@ -136,9 +136,9 @@ function RegisterForm(){
                 <tr>
                   <td colSpan="3" style={{ textAlign: "center" }}>
                     <div style={{ display: "flex", alignItems: "center", justifyContent:"center" }}>
-                      <span   className="txt1">Already have an account? </span>
+                      <span style={{color:'white'}}  className="txt1">Already have an account? </span>
                       <span>
-                        <Link to="/Login" className="txt3" style={{ marginLeft: "5px", padding: "2px" }}>Sign in</Link>
+                      <b><Link to="/Login" className="txt3" style={{ marginLeft: "5px", padding: "2px", color:'green'}}>Sign in</Link></b>
                       </span>
                     </div>
                   </td>

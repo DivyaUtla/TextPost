@@ -4,7 +4,7 @@ import React from 'react';
 const Navbar = ({ isLoggedIn }) =>{
   
   return (
-  <div>
+  <div className="navbar-page">
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
         My POST Website

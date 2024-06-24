@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 function LoginForm(){
     return(
-       <form className='container'>
+       <form className='container1'>
            <center>
                <table>
-                   <tbody>
+                   <tbody style={{textAlign:'center'}}>
                        <tr>
                           <td>
-                          <label htmlFor="username">UserName</label>
+                         <b> <label style={{color:'white'}} htmlFor="username">UserName</label></b>
                           </td> 
                           <td>
                             <input 
@@ -25,7 +25,7 @@ function LoginForm(){
 
                        <tr>
                           <td>
-                          <label htmlFor="password">Password</label>
+                         <b> <label  style={{color:'white'}} htmlFor="password">Password</label></b>
                           </td> 
                           <td>
                             <input 
@@ -41,9 +41,9 @@ function LoginForm(){
                         <button type="submit" className="btn " style={{padding: "5px 10px"}}>
                           Login
                         </button><br/><br/>
-                        <Link class="txt3" href="#" >Forgot Username / Password?</Link><br/>
+                        <b><Link class="txt3" href="#" style={{ marginLeft: "160px", padding: "8px" }}>Forgot Username / Password?</Link></b><br/>
                         <span>
-                        <Link to="/Register" className="txt3" style={{ marginLeft: "1px", padding: "2px" }}>New User?</Link>
+                        <b><Link to="/Register" className="txt3" style={{ marginLeft: "30px", padding: "2px" }}>New User?</Link></b>
                       </span>
                    </tbody>
                </table>
