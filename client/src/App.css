@@ -37,12 +37,26 @@
   }
 }
 
-.navbar-page{
-  background-image: url('../src/components/images/background.png');;
+.navbar{
+  background-color: rgb(188, 195, 159);
+}
+
+.aboutPage p{
+  background-image: url('../src/components/pages/images/background.png');
+  width: 100%;
+  height: 700px;
+  font-family: "Monospace";
+  margin: 2px;
+  padding: 0;
+  background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-size: 100% 100%;
+ background-position: bottom right;
+ background-position: center;
 }
 
 .container1{
-  background-image: url('../src/components/images/Login.png');
+  background-image: url('../src/components/pages/images/Login.png');
   width: 100%;
   height: 700px;
   font-family: "Monospace";
@@ -55,7 +69,7 @@
 }
 
 .container{
-  background-image: url('../src/components/images/Register.png');
+  background-image: url('../src/components/pages/images/Register.png');
   width: 100%;
   height: 700px;
   font-family: "Monospace";

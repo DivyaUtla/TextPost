@@ -1,9 +1,38 @@
-import React from 'react';
-import { Link} from "react-router-dom";
+import React,{useState} from 'react';
+import { Link,useNavigate} from "react-router-dom";
+import { fetchData } from "../../main.js";
 
-function RegisterForm(){
+const Register=()=>{
+  const navigate= useNavigate();
+  const [user,setUser]=useState({
+    firstname: "",
+    lastname: "",
+    username: "",
+    email: "",
+    password: "",
+    password2:""
+  })
+const { firstname, lastname, username, email, password,password2 } = user;
+
+const onChange=(e)=>setUser({...user,[e.target.name]:e.target.value});
+
+const onSubmit = (e) => {
+  e.preventDefault();
+  fetchData('/user/register',{username,password},"POST")
+  .then((data) => {
+    if (!data.message) {
+      // navigate("/profile");
+      navigate("/profile", { state: { username } });
+      console.log(data);
+    }
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+  
+};
     return(
-       <form className='container'>
+       <form className='container' onSubmit={onSubmit}>
            <center>
            <table>
             <tbody>
@@ -18,6 +47,8 @@ function RegisterForm(){
                   placeholder="Enter FirstName" 
                   name="firstname" 
                   id="firstname" required
+                  onChange={onChange}
+                  value={firstname}
                   />
                 </td>
               </tr>
@@ -33,6 +64,8 @@ function RegisterForm(){
                   placeholder="Enter LastName" 
                   name="lastname" 
                   id="lastname" required
+                  onChange={onChange}
+                  value={lastname}
                   />
                 </td>
               </tr>
@@ -48,6 +81,8 @@ function RegisterForm(){
                         id='username'
                         name='username'
                         required
+                        onChange={onChange}
+                        value={username}
                      />
                  </td>
              </tr>
@@ -64,6 +99,8 @@ function RegisterForm(){
                     placeholder="Enter email"
                     name="email"
                     required
+                    onChange={onChange}
+                    value={email}
                   />
                 </td>
               </tr>
@@ -80,6 +117,8 @@ function RegisterForm(){
                     placeholder="Enter password"
                     name="password"
                     required
+                    onChange={onChange}
+                    value={password}
                   />
                 </td>
               </tr>
@@ -96,6 +135,8 @@ function RegisterForm(){
                     placeholder="Enter password"
                     name="password2"
                     required
+                    onChange={onChange}
+                    value={password2}
                   />
                 </td>
               </tr>
@@ -150,6 +191,6 @@ function RegisterForm(){
        </form>
                 
     )
-}
+                        }
 
-export default RegisterForm;
+export default Register;

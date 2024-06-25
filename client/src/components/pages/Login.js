@@ -1,10 +1,39 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-//import { Link} from "react-router-dom";
+import React,{useState} from 'react';
+import { Link,useNavigate } from 'react-router-dom';
+import { fetchData } from '../../main.js';
 
-function LoginForm(){
+const Login=()=>{
+
+  const navigate= useNavigate();
+  const [user,setUser]=useState({
+    username:'',
+    password:''
+  });
+
+  const{username,password}=user;
+
+  const onChange=(e)=>setUser({...user,[e.target.name]:e.target.value});
+
+  const onSubmit=(e)=>{
+    e.preventDefault();
+    fetchData('/user/login',user,"POST")
+    .then((data) => {
+      if (!data.message) {
+        // navigate("/profile");
+        navigate("/profile", { state: { username:user.username } });
+        console.log(data);
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  }
     return(
-       <form className='container1'>
+      <body className="page2">
+      <center>
+        <div className="login-page">
+
+       <form className='container1' onSubmit={onSubmit}>
            <center>
                <table>
                    <tbody style={{textAlign:'center'}}>
@@ -18,7 +47,10 @@ function LoginForm(){
                                 type="text" 
                                 placeholder="Enter UserName" 
                                 name="username" 
-                                id="username" required
+                                id="username"
+                                onChange={onChange}
+                                value={username}
+                                required
                             /> 
                           </td>
                        </tr>
@@ -30,10 +62,13 @@ function LoginForm(){
                           <td>
                             <input 
                                 style={{ marginLeft: "30px", padding: "2px" }} 
-                                type="text" 
+                                type="password" 
                                 placeholder="Enter Password" 
                                 name="password" 
-                                id="password" required
+                                id="password" 
+                                onChange={onChange}
+                                value={password}
+                                required
                             /> 
                           </td>
                        </tr>
@@ -49,6 +84,7 @@ function LoginForm(){
                </table>
            </center>
        </form>
+       </div></center></body>
     )
 }
-export default LoginForm;
+export default Login;
