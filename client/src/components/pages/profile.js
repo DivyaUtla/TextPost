@@ -39,12 +39,6 @@ const Profile = () => {
     localStorage.setItem(`${username}-userPosts`, JSON.stringify(updatedPosts));
   };
 
-
-  // const handleCancel = () => {
-  //   localStorage.setItem('userPosts', JSON.stringify(posts)); 
-  //   setPosts([]); 
-  //   setNewPost('');
-  // };
   const handleCancel = () => {
     localStorage.setItem(`${username}-userPosts`, JSON.stringify(posts));
     setPosts([]);
@@ -53,14 +47,22 @@ const Profile = () => {
   
 
   return (
-    <body class="page6">
+    <body class="profile-page">
     <center>
-    <div className="profile-container">
-      <div>
-        <h2>Profile Page</h2>
-        <h3>Welcome, {username}!</h3>
-
+    <div>
+        <h2 style={{color:'brown',fontFamily:'monospace'}}>Welcome,{username}!!! to your Profile Page</h2>
         <div>
+    <div className="profilepic">
+        <img src={require('../pages/images/cat.png')} alt='text' height={"150"}/>
+        <h2>{username}</h2>
+        <p>Welcome to my page:)<br/> 
+        i'll make you laugh,smile and occasionally scare the crap out of you.<br/>
+        buckle up and enjoy the ride!!
+        </p>
+        <span><button>Posts</button></span><button>Followers</button><span><button>Following</button></span>
+    </div>
+    <div className="profile-container">
+      
           <h4>Your Posts:</h4>
           {posts.length === 0 ? (
             <p>No posts yet :|</p>
@@ -80,7 +82,7 @@ const Profile = () => {
           <label>
             Create a new post:
             <input
-              style={{ marginLeft: '8em' }}
+              style={{ marginLeft: '2em',padding:'40px' }}
               type="text"
               value={newPost}
               onChange={handlePostChange}
@@ -100,6 +102,7 @@ const Profile = () => {
               textDecoration: 'none',
               fontWeight: 'bold',
               cursor: 'pointer',
+              color:'Black'
             }}
             onClick={handleCancel}
             to="/Login"

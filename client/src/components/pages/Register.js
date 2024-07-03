@@ -18,7 +18,8 @@ const onChange=(e)=>setUser({...user,[e.target.name]:e.target.value});
 
 const onSubmit = (e) => {
   e.preventDefault();
-  fetchData('/user/register',{username,password},"POST")
+  
+  fetchData('/user/register',user,"POST")
   .then((data) => {
     if (!data.message) {
       // navigate("/profile");
@@ -46,9 +47,10 @@ const onSubmit = (e) => {
                   type="text" 
                   placeholder="Enter FirstName" 
                   name="firstname" 
-                  id="firstname" required
+                  id="firstname" 
                   onChange={onChange}
                   value={firstname}
+                  required
                   />
                 </td>
               </tr>
@@ -63,9 +65,10 @@ const onSubmit = (e) => {
                   type="text" 
                   placeholder="Enter LastName" 
                   name="lastname" 
-                  id="lastname" required
+                  id="lastname"
                   onChange={onChange}
                   value={lastname}
+                  required
                   />
                 </td>
               </tr>
@@ -80,9 +83,9 @@ const onSubmit = (e) => {
                         type="text" placeholder='Enter UserName'
                         id='username'
                         name='username'
-                        required
                         onChange={onChange}
                         value={username}
+                        required
                      />
                  </td>
              </tr>
@@ -98,9 +101,9 @@ const onSubmit = (e) => {
                     id="email"
                     placeholder="Enter email"
                     name="email"
-                    required
                     onChange={onChange}
                     value={email}
+                    required
                   />
                 </td>
               </tr>
@@ -116,9 +119,9 @@ const onSubmit = (e) => {
                     id="password"
                     placeholder="Enter password"
                     name="password"
-                    required
                     onChange={onChange}
                     value={password}
+                    required
                   />
                 </td>
               </tr>
@@ -134,9 +137,9 @@ const onSubmit = (e) => {
                     id="password2"
                     placeholder="Enter password"
                     name="password2"
-                    required
                     onChange={onChange}
                     value={password2}
+                    required
                   />
                 </td>
               </tr>

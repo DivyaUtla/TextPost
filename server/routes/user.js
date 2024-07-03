@@ -15,6 +15,12 @@ router
 
     .post('/register',async(req,res)=>{
         try{
+            const { username, password, password2 } = req.body;
+
+            // Validating if passwords match
+            if (password !== password2) {
+                throw Error("Passwords do not match");
+            }
             const user=await User.register(req.body.username, req.body.password);
             res.send({...user,password:undefined});
         }catch(error){

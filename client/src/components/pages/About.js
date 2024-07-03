@@ -12,15 +12,13 @@ const About = () => {
   <br></br>
   <br></br>
                 <br></br>
-                  <h2> Hi there!!!..</h2>
+                  <h2> Hi there &#128521;</h2>
                     <br></br>
                     <br></br>
-                <h2>WELCOME</h2>
+                <h2>&#9829; WELCOME  &#9829;</h2>
                     
-                  <h2>  This site allows you to create and share your posts!!! </h2>
-      
-      
-                  <h2>   Create a new account or login to your account - A simple and fun way to share your message and posts !!!!!</h2>
+                  
+                  <h2>   Register or sign in now – an effortless and enjoyable way to share your messages and posts &#128241; !!</h2>
                   </center>
                 </div>
            </p>     

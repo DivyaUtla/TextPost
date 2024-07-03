@@ -38,7 +38,7 @@
 }
 
 .navbar{
-  background-color: rgb(188, 195, 159);
+  background-color: burlywood;
 }
 
 .aboutPage p{
@@ -79,4 +79,16 @@
   background-attachment: fixed;
  background-size:cover;
   
+}
+
+.profile-page{
+  background-image: url('../src/components/pages/images/profile.png');
+  width: 100%;
+  height: 700px;
+  font-family: "Monospace";
+  margin: 2px;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }

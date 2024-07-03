@@ -11,7 +11,6 @@ const Navbar = ({ isLoggedIn }) =>{
       
       <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav">
-          {!isLoggedIn && (
             <>
               <li className="nav-item">
                 <Link className="nav-link" to="/Login">Login</Link>
@@ -20,14 +19,11 @@ const Navbar = ({ isLoggedIn }) =>{
                 <Link className="nav-link" to="/Register">Register</Link>
               </li>
               </>
-          )}
-              {isLoggedIn && (
                 <>
                   <li className="nav-item">
                     <Link className="nav-link" to="/profile">Profile</Link>
                   </li>
                 </>
-          )}
         </ul>
       </div>
       </div>
